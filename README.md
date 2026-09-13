@@ -1,63 +1,116 @@
-# VR Equipment Maintenance Inventory System
+VR Equipment Maintenance – Inventory & Interaction Prototype
+A small VR interaction and inventory prototype developed in Unity as part of the Unity Developer assignment for Edgeforce Solutions Pvt. Ltd.
 
-A small VR interaction and inventory prototype built in Unity as part of the Unity Developer assignment for Edgeforce Solutions Pvt. Ltd.
+The project demonstrates XR object interaction, contextual interaction prompts, inventory management, stackable and non-stackable item handling, controller-based UI interaction, and prefab-based item retrieval.
 
-The prototype focuses on reusable VR interaction, inventory management, stackable and non-stackable items, controller-based UI interaction, and clean separation between gameplay logic and UI.
+Unity Version
+Unity 2021.3.30f1 Personal
 
----
+How to Run the Project
+Clone or download this repository.
 
-## Features
+Open the project using Unity 2021.3.30f1.
 
-- VR-based object interaction
-- Near/Far object interaction
-- Left-controller Ray Interactor for inventory UI
-- Contextual interaction prompts
-- Grab objects using XR controllers
-- Store held objects using the A button
-- Fixed 3 × 3 inventory with 9 slots
-- Stackable item support
-- Non-stackable item support
-- Maximum stack limits
-- Duplicate prevention for non-stackable items
-- Inventory-full and stack-full feedback
-- Inventory item icons
-- Dynamic item quantity display
-- Retrieve items from inventory
-- Spawn a fresh item prefab when retrieving
-- World-space VR inventory UI
-- Controller-based inventory button interaction
-- Temporary feedback messages that disappear automatically
+Open the Unity Editor.
 
----
+Navigate to the main demonstration scene:
+Assets/Residential/Garage/Demo/Demo Garage
 
-## Demo Flow
+Open the Demo Garage scene.
 
-The main interaction flow is:
+Enter Play Mode.
 
-1. Hover over an interactable object.
-2. An instruction appears:
-   `Use Grab Button to grab <Item>`
-3. Grab the object.
-4. The instruction changes to:
-   `Press A to store <Item>`
-5. Press A to store the item.
-6. The inventory UI updates with the item's icon and quantity.
-7. Open the inventory using the assigned inventory button.
-8. Use the left-controller Ray Interactor to select an inventory slot.
-9. Retrieve the selected item.
-10. A new instance of the item's prefab is spawned into the world.
+Use the XR Device Simulator controls described below to interact with the scene.
 
----
+XR Device Simulator Controls
+The project can be tested directly in the Unity Editor using the XR Device Simulator.
 
-## Inventory Rules
+Right Controller
+Action	Keyboard / Mouse
+Trigger	Left Mouse Button
+A Button	B Key
+B Button	N Key
+Grab	G
+Left Controller
+Action	Keyboard / Mouse
+Trigger	Right Mouse Button
+A Button	B Key
+B Button	N Key
+Grab	G
+Player Movement
+Action	Keyboard
+Move Forward	W
+Move Backward	S
+Move Left	A
+Move Right	D
+Inventory Controls
+B Button: Open the inventory.
 
-### Stackable Items
+Left Controller Ray: Point at an inventory slot.
 
-Stackable items are stored in the same inventory slot until their maximum stack size is reached.
+Left Controller Trigger: Select an inventory slot.
 
-Example:
+Right Controller: Grab physical objects.
 
-```text
-Battery 1  → Slot 0: Battery ×1
-Battery 2  → Slot 0: Battery ×2
-Battery 3  → Slot 0: Battery ×3
+A Button: Store the currently held item.
+
+Note: The controls above are the keyboard and mouse mappings used with the XR Device Simulator during development.
+
+Project Overview
+The prototype is designed as a small VR equipment-maintenance environment inside a garage/workshop.
+
+The player can approach and interact with physical objects using XR controllers. Contextual instructions are displayed depending on the current interaction state.
+
+Features
+Interactables: Hover over objects to receive instructions.
+
+Grabbing: Grab objects using the XR controller.
+
+Storage: Store held objects in the inventory.
+
+UI: View stored items through the inventory UI.
+
+Stacking: Stack supported items.
+
+Validation: Prevent duplicate non-stackable items.
+
+Retrieval: Retrieve items using the inventory UI.
+
+Spawning: Spawn a new physical instance of the retrieved item.
+
+Main Interaction Flow
+Hover over an object.
+
+Prompt: "Use Grab Button to grab <Item>".
+
+Grab the object using the controller.
+
+Store the item in the inventory.
+
+Open the inventory UI.
+
+Select an item to retrieve.
+
+Spawn the item back into the physical world.
+
+Project Structure
+text
+Assets/
+└── Residential/
+    └── Garage/
+        └── Demo/
+            └── Demo Garage (Scene)
+Key Technologies
+Unity XR Interaction Toolkit
+
+XR Device Simulator
+
+C# Scripting
+
+Unity UI (uGUI)
+
+Notes
+Ensure the XR Device Simulator is active in the scene hierarchy to use keyboard/mouse controls.
+
+This is a prototype focused on interaction logic and inventory systems.
+
