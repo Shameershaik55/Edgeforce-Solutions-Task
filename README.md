@@ -101,7 +101,7 @@ The player can interact with physical objects, receive contextual instructions, 
             ↓
     Inventory UI updates
             ↓
-    Open Inventory
+    Open Inventory By click on "N" on keyboard which belongs reference to the "B" key on Controller
             ↓
     Point Right Controller Ray at a slot
             ↓
